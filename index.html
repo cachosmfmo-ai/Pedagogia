@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Jj9faF39iNB5VphKy6eMyx",debug:true});</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pixel Arts para Professores | Atividades prontas para imprimir</title>
@@ -187,6 +188,11 @@ document.addEventListener("click",function(e){
 });
 document.getElementById("preco").textContent=PRECO;
 document.getElementById("cta").href="https://pay.hotmart.com/N108120052W";
+  oaiq(
+  "measure",
+  "checkout_started",
+  { type: "contents" }
+);
 document.getElementById("contato").textContent=CONTATO;
 // pixel art que se pinta sozinha (coração, 8x7)
 var map="01100110"+"12111111"+"11111111"+"11111111"+"01111110"+"00111100"+"00011000";
