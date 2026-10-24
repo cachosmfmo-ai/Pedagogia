@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._l)f._l=1;n.t=+new Date();t=b.createElement(e);t.async=!0;
+v=b.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1346027510656956');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1346027510656956&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
   <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Jj9faF39iNB5VphKy6eMyx",debug:true});</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -188,12 +204,16 @@ document.addEventListener("click",function(e){
 });
 document.getElementById("preco").textContent=PRECO;
 document.getElementById("cta").href="https://pay.hotmart.com/N108120052W";
-  oaiq(
-  "measure",
-  "checkout_started",
-  { type: "contents" }
-);
-document.getElementById("contato").textContent=CONTATO;
+
+document.getElementById("cta").addEventListener("click", function(){
+  // Evento do ChatGPT Ads
+  oaiq("measure", "checkout_started", { type: "contents" });
+  
+  // Evento do Facebook Pixel
+  fbq('track', 'InitiateCheckout');
+});
+
+document.getElementById("IdContato").textContent=CONTATO;
 // pixel art que se pinta sozinha (coração, 8x7)
 var map="01100110"+"12111111"+"11111111"+"11111111"+"01111110"+"00111100"+"00011000";
 var sp=document.getElementById("sprite"), n=0;
